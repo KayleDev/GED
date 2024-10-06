@@ -20,10 +20,11 @@ class Document {
     // Função que checará o tipo de documento e definirá uma imagem baseado nisso, retornando a referência
     // da imagem do src
     get typeImage() {
-        if(this.type === "text/plain") {
-            return "32329.png";
-        } else if(this.type === "image/png") {
-            return "1829415.png";
+        switch(this.type) {
+            case "text/plain":
+                return "textDocument.png";
+            case "image/png":
+                return "imageDocument.png";
         }
     }
 }
@@ -43,12 +44,11 @@ document.getElementById("fileInput").addEventListener("change", (e) => {
 
         // Div que armazenará os elementos do documento
         let div = document.createElement("div");
-
         // Imagem que representa o documento
         let img = document.createElement("img");
         // Nome do documento
         let documentName = document.createElement("h2");
-        // Tamanho do documento
+        // Tamanho do documento em KiloBytes ou MegaBytes
         let documentSize = document.createElement("h3");
 
         // Nome de classe que colocará uma borda entre os elementos do documento
