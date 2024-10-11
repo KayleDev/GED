@@ -88,8 +88,11 @@ function createComentHTML(coment) {
   infoDate.textContent = coment.date;
   commentInfo.appendChild(infoDate);
 
-  let commentContent = document.createElement("p");
-  userName.textContent = coment.content;
+  let commentContent = document.createElement("input");
+  commentContent.classList.add("comment-content");
+  commentContent.setAttribute("type", "text");
+  commentContent.setAttribute("value", coment.content);
+  commentContent.disabled = true;
   commentMain.appendChild(commentContent);
 
   let commentOptions = document.createElement("div");
@@ -101,7 +104,7 @@ function createComentHTML(coment) {
   optionEdit.setAttribute("value", "Editar");
   commentOptions.appendChild(optionEdit);
 
-  let optionDelete = document.createElement("input")
+  let optionDelete = document.createElement("input");
   optionDelete.setAttribute("type", "button");
   optionDelete.setAttribute("value", "Excluir");
   optionDelete.addEventListener("click", function() {deleteComent(idNumber)});
@@ -120,6 +123,10 @@ function deleteComent(idNumber) {
 function deleteComentFromStorage(idNumber) {
   let comentStorage = JSON.parse(localStorage.getItem("coments"));
   delete comentStorage[idNumber];
+  if (Number(Object.keys(comentStorage).length) == 0) {
+    localStorage.removeItem("coments");
+    return;
+  }
   localStorage.setItem("coments", JSON.stringify(comentStorage));
 }
 
