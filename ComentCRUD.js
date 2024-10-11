@@ -20,11 +20,7 @@ class Coment {
     let comentStorage = JSON.parse(localStorage.getItem("coments"));
     let idNumber = 1;
     if (comentStorage)
-      for (
-        idNumber = 1;
-        idNumber <= Object.keys(comentStorage).length;
-        idNumber++
-      );
+      idNumber = Number(Object.keys(comentStorage)[Object.keys(comentStorage).length - 1]) + 1;
     return idNumber;
   }
 
@@ -37,7 +33,7 @@ class Coment {
     const date = new Date();
     const datePtBr =
       date.getDate() + "/" + (date.getMonth() + 1) + "/" + date.getFullYear();
-    return datePtBr
+    return datePtBr;
   }
 }
 
@@ -47,16 +43,70 @@ function createComent() {
   saveComent(coment);
   createComentHTML(coment);
 }
-createComent();
 
 function saveComent(coment) {
   let comentStorage = JSON.parse(localStorage.getItem("coments"));
   if (!comentStorage) comentStorage = {};
   comentStorage[coment.idNumber] = coment;
+  delete coment.idNumber;
   localStorage.setItem("coments", JSON.stringify(comentStorage));
 }
 
-function createComentHTML(coment) {}
+function createComentHTML(coment) {
+  let comentStorage = JSON.parse(localStorage.getItem("coments"));
+  let idNumber = 1;
+  if (comentStorage)
+    idNumber = Number(Object.keys(comentStorage)[Object.keys(comentStorage).length - 1]);
+
+  let main = document.querySelector("main");
+
+  let commentMain = document.createElement("div");
+  commentMain.classList.add("comment");
+  commentMain.id = "comment_" + idNumber;
+  main.appendChild(commentMain);
+
+  let commentHeader = document.createElement("div");
+  commentHeader.classList.add("comment-header");
+  commentMain.appendChild(commentHeader);
+
+  let headerUser = document.createElement("div");
+  headerUser.classList.add("comment-header-user");
+  commentHeader.appendChild(headerUser);
+
+  let userImg = document.createElement("img");
+  headerUser.appendChild(userImg);
+
+  let userName = document.createElement("p");
+  userName.textContent = coment.sender;
+  headerUser.appendChild(userName);
+
+  let commentInfo = document.createElement("div");
+  commentInfo.classList.add("comment-header-info");
+  commentHeader.appendChild(commentInfo);
+
+  let infoDate = document.createElement("p");
+  infoDate.textContent = coment.date;
+  commentInfo.appendChild(infoDate);
+
+  let commentContent = document.createElement("p");
+  userName.textContent = coment.content;
+  commentMain.appendChild(commentContent);
+
+  let commentOptions = document.createElement("div");
+  commentOptions.classList.add("comment-options");
+  commentMain.appendChild(commentOptions);
+
+  let optionEdit = document.createElement("input")
+  optionEdit.setAttribute("type", "button");
+  optionEdit.setAttribute("value", "Editar");
+  commentOptions.appendChild(optionEdit);
+
+  let optionDelete = document.createElement("input")
+  optionDelete.setAttribute("type", "button");
+  optionDelete.setAttribute("value", "Excluir");
+  optionDelete.addEventListener("click", function() {deleteComent(idNumber)});
+  commentOptions.appendChild(optionDelete);
+}
 
 // UPDATE
 function updateComentContent(idNumber) {}
@@ -64,13 +114,16 @@ function updateComentContent(idNumber) {}
 // DELETE
 function deleteComent(idNumber) {
   deleteComentFromStorage(idNumber);
-  deleteComent(idNumber);
+  deleteComentHTML(idNumber);
 }
 
-function deleteComentFromStorage() {
-  const comentStorage = JSON.parse(localStorage.getItem("coments"));
+function deleteComentFromStorage(idNumber) {
+  let comentStorage = JSON.parse(localStorage.getItem("coments"));
   delete comentStorage[idNumber];
   localStorage.setItem("coments", JSON.stringify(comentStorage));
 }
 
-function deleteComentHTML() {}
+function deleteComentHTML(idNumber) {
+  let coment = document.querySelector("#comment_"+idNumber);
+  coment.remove();
+}
