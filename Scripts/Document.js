@@ -17,15 +17,11 @@ class Document {
         }
     }
 
-    // Função que checará o tipo de documento e definirá uma imagem baseado nisso, retornando a referência
-    // da imagem do src
+    // Função que tirará a barra do tipo de arquivo e retornando o nome junto do documento
+    // Ex: text/plain é o tipo de arquivo txt, ele retornará textplain
     get typeImage() {
-        switch(this.type) {
-            case "text/plain":
-                return "textDocument.png";
-            case "image/png":
-                return "imageDocument.png";
-        }
+        let image = this.type.split("/")
+        return `${image[0]}${image[1]}`;
     }
 }
 
@@ -55,7 +51,14 @@ document.getElementById("fileInput").addEventListener("change", (e) => {
         div.className = "borda";
 
         // Imagem que representa o tipo de documento sendo colocada no src do img
-        img.src = "../Assets/DocumentImages/" + dc.typeImage;
+        img.src = "../Assets/DocumentImages/" + dc.typeImage + ".png";
+        
+        // Caso ocorra um erro no carregamento, como um erro de referenciamento, ele trocará a imagem
+        // por uma de others
+        img.onerror = () => {
+            img.src = "../Assets/DocumentImages/" + "others" + ".png";
+        }
+
         // Definindo um tamanho em pixels pra imagem
         img.width = 256;
 
