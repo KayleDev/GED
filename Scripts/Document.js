@@ -60,7 +60,7 @@ document.getElementById("fileInput").addEventListener("change", (e) => {
         }
 
         // Definindo um tamanho em pixels pra imagem
-        img.width = 256;
+        img.width = 64;
 
         // Colocando o nome do documento como conteúdo do elemento
         documentName.textContent = file.name;

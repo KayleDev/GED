@@ -10,25 +10,27 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 </head>
 <body>
-    <div class="file-input-wrapper">
-        <input type="file" id="fileInput">
-    </div>
+    <!-- Tudo que for ficar com menos opacidade vai dentro dessa tag-->
+<div id="opacity-Effect"></div>
 
-    <div class="file-container" id="file-container">
+    <!-- Aqui é o container que aparecerá quando o usuário clicar para colocar documento no site.-->
+<div id="container">
+    <div class="file-input-wrapper" id="fileInputWrapper">
+        <div class="file-container" id="file-container"></div>
+    </div>
+</div>
 
+    <!-- Esse é o botão Adicionar q fica no canto da tela e ao clicar nele, ele ativa um dropdown q coloca 2 elementos de botão-->
+    <!-- O primeiro botão coloca pastas, e o segundo coloca documentos(por enquanto o das pastas fez o L)-->
+<div class="corner-button">
+    <button id="dropdownButton"> Adicionar <i class="fas fa-plus"></i></button>
+    <div id="dropdownMenu" class="dropdown-content">
+        <button id="btn-Options"></button>
+        <button id="btn-Options2"><input type="file" id="fileInput"></button>
     </div>
+</div>
 
-    <div class="corner-button">
-        <button id="dropdownButton"> Adicionar <i class="fas fa-plus"></i></button>
-        <div id="dropdownMenu" class="dropdown-content">
-            <input type="button" id="btn-Options">
-            <input type="button" id="btn-Options2">
-        </div>
-    </div>
-    
-    
-    
-    </div>
     <script src="../Scripts/Document.js"></script>
+    <script src="../Scripts/telaPrincipal.js"></script>
 </body>
 </html>
