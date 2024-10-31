@@ -9,8 +9,8 @@
 <body>
   <main>
     <form id="comment-form">
-      <input type="text" id="comentInput">
-      <input type="button" value="Enviar" onclick="createComent()"></input>
+      <input type="text" id="coment-form-text">
+      <input type="button" value="Enviar" id="coment-form-button"></input>
     </form>
 
     <div class="comment">
@@ -26,12 +26,12 @@
       </div>
       <p class="comment-content">Lorem ipsum dolor sit amet consectetur adipisicing elit. At perspiciatis dolores quia, ab, maxime libero nostrum distinctio possimus recusandae dolorem cupiditate similique ex cum, explicabo doloribus corporis deserunt expedita sequi!</p>
       <div class="comment-options">
-        <button>Editar</button>
+        <button style="display: none;">Editar</button>
         <button>Excluir</button>
       </div>
     </div>
-  </main>
-  
+
+  <script src="https://code.jquery.com/jquery-3.7.1.js" integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=" crossorigin="anonymous"></script>
   <script src="comentCRUD.js"></script>
 </body>
 </html>
