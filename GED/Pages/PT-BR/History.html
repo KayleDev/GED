@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gerenciamento de Documentos</title>
+    <link rel="stylesheet" href="../../Styles/Main.css">
+    <link rel="stylesheet" href="../../Styles/history.css">
+    <link rel="stylesheet" href="../../Styles/Sidebar.css">
+    <link rel="stylesheet" href="../../Styles/Explorer.css">
+    <style>
+        /* Estilo para alinhar e definir tamanho fixo para cada coluna */
+        .file-item {
+            display: flex;
+            justify-content: space-between;
+            background-color: transparent;
+            padding: 10px;
+        }
+        
+        .file-item > div {
+            flex: 1;
+            text-align: center;
+            padding: 5px;
+            color: #000000;
+        }
+
+        .file-item-header {
+            font-weight: bold;
+            background-color: transparent;
+            color: #000000;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container-general" style="z-index: 2;">
+        <nav class="sidebar">
+            <div class="header">
+                <h2>NeoFiles</h2>
+                
+            </div>
+            
+            <div class="menu">
+                <a href="Home.html" class="menu-item">
+                    <span class="icon">🏠</span> Início
+                </a>
+                <a href="./Explorer.html" class="menu-item ">
+                    <span class="icon">📄</span> Arquivos
+                </a>
+                <a href="./History.html" class="menu-item active">
+                    <span class="icon">⏳</span> Histórico
+                </a>
+                <a href="./Lixeira.html" class="menu-item">
+                    <span class="icon">🗑️</span> Lixeira
+                </a>
+            </div>
+            
+            <div class="sections">
+                <div class="section">
+                    <h3>Favoritos</h3>
+                    <hr>
+                </div>
+                <div class="section">
+                    <h3>Recentes</h3>
+                    <hr>
+                </div>
+            </div>
+        </nav>
+
+        <section class="timeline" style="flex: 2;">
+            <h1>Histórico</h1>
+            <div class="date-filter">
+                <div id="currentDate"></div>
+                <div class="filters">
+                    <div onclick="filterFiles('today')">Hoje</div>
+                    <div onclick="filterFiles('week')">Semana</div>
+                    <div onclick="filterFiles('month')">Mês</div>
+                    <div onclick="filterFiles('year')">Ano</div>
+                </div>
+            </div>
+            <hr>
+            <div class="files-list" id="filesList">
+                <div class="file-item file-item-header">
+                    <div>Tipo</div>
+                    <div>Nome</div>
+                    <div>Criado em</div>
+                    <div>Modificado em</div>
+                </div>
+            </div>
+        </section>
+
+        <script src="../../Scripts/history.js"></script>
+
+    </body>
+</html>

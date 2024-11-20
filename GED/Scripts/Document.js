@@ -58,7 +58,7 @@ function saveDocument(document) {
 function createDocumentHTML(document) {
   let documentHTML = `
     <div class="borda">
-      <img src="../../Assets/DocumentImages/`+document.type+`.png" onerror="this.onerror=null;this.src='../../Assets/DocumentImages/others.png'" width="64">
+      <img src="../../Assets/DocumentImages/`+document.type+`.svg" onerror="this.onerror=null;this.src='../../Assets/DocumentImages/others.svg'" width="64">
       <h2>`+document.name+`</h2>
       <h3>`+document.size+`</h3>
       <h4>`+document.sender+`</h4>
@@ -72,7 +72,7 @@ function createDocumentHTML(document) {
         <img src="../../Assets/icons/star.svg" class="document-icon">
         <img src="../../Assets/icons/dots.svg" class="document-icon">
       </div>
-      <img src="../../Assets/DocumentImages/`+document.type+`.png" onerror="this.onerror=null;this.src='../../Assets/DocumentImages/others.png'" width="64">
+      <img src="../../Assets/DocumentImages/`+document.type+`.svg" onerror="this.onerror=null;this.src='../../Assets/DocumentImages/others.svg'" width="64">
       <h2>`+document.name+`</h2>
       <h3>`+document.size+`</h3>
     </div>`;

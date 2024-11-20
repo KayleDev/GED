@@ -1,0 +1,66 @@
+/* Timeline */
+.timeline {
+  background-color: transparent;
+  padding: 20px;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.timeline h1 {
+  font-family: horizon;
+  font-size: 57px;
+  font-weight: bold;
+  color: var(--primary-color);
+}
+
+.timeline .date-filter {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 10px;
+}
+
+.date-filter div {
+  font-size: 18px;
+  color: var(--primary-color);
+}
+
+.filters {
+  display: flex;
+  gap: 10px;
+}
+
+.filters div {
+  padding: 5px 15px;
+  background-color: transparent;
+  color: var(--dark-body-color);
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.filters div:hover {
+  background-color: #444;
+}
+
+.files-list {
+  color: #777;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-top: 10px;
+}
+
+.file-item {
+  width: 100%;
+  padding: 10px;
+  background-color: #e0e0e0;
+  border-radius: 5px;
+  transition: background-color 0.3s ease;
+}
+
+.file-item:hover {
+  background-color: #d1d1d1;
+}

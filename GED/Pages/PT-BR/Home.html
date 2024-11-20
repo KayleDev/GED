@@ -14,19 +14,22 @@
         <!-- Sidebar -->
         <nav class="sidebar">
             <div class="header">
-                <h2>Neofiles</h2>
+                <h2>NeoFiles</h2>
             </div>
             
             <!-- Main Navigation Items -->
             <div class="menu">
-                <a href="#" class="menu-item active">
+                <a href="Home.html" class="menu-item active">
                     <span class="icon">🏠</span> Início
                 </a>
                 <a href="./Explorer.html" class="menu-item">
                     <span class="icon">📄</span> Arquivos
                 </a>
-                <a href="#" class="menu-item">
+                <a href="./History.html" class="menu-item">
                     <span class="icon">⏳</span> Histórico
+                </a>
+                <a href="./Lixeira.html" class="menu-item">
+                    <span class="icon">🗑️</span> Lixeira
                 </a>
             </div>
             
@@ -42,10 +45,7 @@
                 </div>
             </div>
         
-            <!-- Trash Section at the Bottom -->
-            <div class="trash">
-                <span class="icon">🗑️</span> Lixeira
-            </div>
+           
         </nav>
 
         <div>
@@ -55,11 +55,18 @@
                 <section class="top-bar">
                     <div class="container">
                         <div class="input-container">
-                            <input required="" id="input" type="text" />
+                            <input required="" id="input" type="text" placeholder=" " />
                             <label class="label" for="input">Pesquisar</label>
                             <div class="underline"></div>
                         </div>
+                        <!-- Container para exibir os resultados -->
+                        <div id="results-container" class="results-container"></div>
                     </div>
+                    
+
+                    <script>
+                  
+                    </script>
 
                     <div class="toggle">
                         <input type="checkbox" id="inCheck" onchange="backgroundColor()">
@@ -144,5 +151,6 @@
         </div>
     </main>
     <script src="../../Scripts/DarkMode.js"></script>
+    <script src="../../Scripts/Pesquisar.js"></script>
 </body>
 </html>

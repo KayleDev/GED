@@ -27,3 +27,5 @@ btnOptions2.addEventListener("click", () => {
 fileInput.addEventListener("change", () => {
   fileInputWrapper.style.backgroundImage = "none";
 });
+
+
