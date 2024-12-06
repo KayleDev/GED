@@ -11,9 +11,6 @@
     <link rel="stylesheet" href="../../Styles/History.css">
     <link rel="stylesheet" href="../../Styles/Sidebar.css">
     <link rel="stylesheet" href="../../Styles/Explorer.css">
-    <link rel="stylesheet" href="../../Styles/Modal.css">
-
-    
     <!-- Estilo específico pro arquivo não conflitar depois com outros css -->
     <style>
         /* Estilo para alinhar e definir tamanho fixo para cada coluna */
@@ -125,14 +122,6 @@
         </section>
 
     </div>
-
-    
-<div id="myModal" class="modal">
-    <div class="modal-content">
-    <span class="close">&times;</span>
-    <p>Some text in the Modal..</p>
-    </div>
-</div>
 
     <!-- Scripts para exibição de alterações no histórico -->
     <script src="../../Scripts/History.js"></script>
