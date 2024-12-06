@@ -1,0 +1,163 @@
+p {
+  color: var(--dark-body-color);
+}
+
+/* Timeline */
+.timeline {
+  background-color: transparent; /* Cor de fundo transparente */
+  padding: 20px; /* Espaçamento interno */
+  border-radius: 10px; /* Bordas arredondadas */
+  display: flex; /* Flexbox para organizar os itens em uma coluna */
+  flex-direction: column; /* Coloca os itens em uma coluna */
+  gap: 10px; /* Espaço entre os itens */
+}
+
+.timeline h1 {
+  font-family: horizon; /* Fonte personalizada para o título */
+  font-size: 57px; /* Tamanho grande para o título */
+  font-weight: bold; /* Negrito no título */
+  color: var(--primary-color); /* Cor personalizada para o título */
+}
+
+.timeline .date-filter {
+  display: flex; /* Flexbox para organizar os itens horizontalmente */
+  justify-content: space-between; /* Distribui os itens com espaço entre eles */
+  align-items: center; /* Alinha verticalmente os itens */
+  margin-top: 10px; /* Espaço acima do filtro de data */
+}
+
+.date-filter div {
+  font-size: 18px; /* Tamanho do texto dos filtros */
+  color: var(--primary-color); /* Cor personalizada para os textos do filtro */
+}
+
+.filters {
+  display: flex; /* Flexbox para organizar os filtros */
+  gap: 10px; /* Espaço entre os filtros */
+}
+
+.filters div {
+  padding: 5px 15px; /* Espaçamento interno nos filtros */
+  background-color: transparent; /* Fundo transparente */
+  color: var(--dark-body-color); /* Cor dos textos dos filtros */
+  border-radius: 5px; /* Bordas arredondadas */
+  cursor: pointer; /* Cursor de mão ao passar o mouse */
+  transition: background-color 0.3s ease; /* Transição suave para a cor de fundo */
+}
+
+.filters div:hover {
+  background-color: var(--secondary-white-color); /* Altera a cor de fundo no hover */
+}
+
+.files-list {
+  color: var(--primary-text-color); /* Cor do texto dos arquivos */
+  display: flex; /* Flexbox para organizar os itens de arquivos */
+  flex-direction: column; /* Organiza os itens na vertical */
+  text-overflow: ellipsis;
+  gap: 10px; /* Espaço entre os itens */
+  margin-top: 10px; /* Espaço acima da lista de arquivos */
+}
+
+.file-item {
+  width: 100%; /* Largura total do item */
+  padding: 10px; /* Espaçamento interno */
+  background-color: var(--primary-text-color); /* Cor de fundo personalizada para os itens */
+  border-radius: 5px; /* Bordas arredondadas */
+  transition: background-color 0.3s ease; /* Transição suave para a cor de fundo */
+}
+
+.file-item div {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-width: 200px;
+  display: inline-block;
+  cursor: pointer;
+}
+
+.file-item:hover {
+  background-color: var(--primary-text-color); /* Altera a cor de fundo no hover */
+}
+
+/* Telas pequenas (até 600px) */
+@media (max-width: 600px) {
+  .timeline {
+    padding: 10px; /* Reduz o padding */
+    gap: 5px; /* Diminui o espaço entre os itens */
+  }
+
+  .timeline h1 {
+    font-size: 36px; /* Tamanho do título menor */
+    text-align: center; /* Centraliza o título */
+  }
+
+  .timeline .date-filter {
+    flex-direction: column; /* Organiza os filtros verticalmente */
+    align-items: flex-start; /* Alinha os filtros à esquerda */
+    gap: 5px; /* Espaço menor entre os filtros */
+  }
+
+  .date-filter div {
+    font-size: 16px; /* Tamanho do texto menor */
+  }
+
+  .filters {
+    flex-wrap: wrap; /* Permite que os filtros quebrem para a linha seguinte */
+    justify-content: center; /* Centraliza os filtros */
+  }
+
+  .filters div {
+    font-size: 14px; /* Tamanho do texto dos filtros menor */
+    padding: 5px 10px; /* Ajusta o espaçamento interno */
+  }
+
+  .file-item {
+    font-size: 14px; /* Tamanho do texto dos itens menor */
+    padding: 8px; /* Ajusta o espaçamento interno */
+  }
+}
+/* Telas médias (601px a 1024px) */
+@media (min-width: 601px) and (max-width: 1024px) {
+  .timeline {
+    padding: 15px; /* Ajusta o padding */
+    gap: 8px; /* Espaço entre os itens */
+  }
+
+  .timeline h1 {
+    font-size: 48px; /* Tamanho do título ajustado */
+  }
+
+  .timeline .date-filter {
+    flex-direction: row; /* Organiza os filtros horizontalmente */
+    justify-content: space-around; /* Espaço igual entre os filtros */
+  }
+
+  .filters {
+    justify-content: flex-start; /* Alinha os filtros à esquerda */
+  }
+
+  .filters div {
+    font-size: 16px; /* Tamanho do texto ajustado */
+    padding: 5px 12px; /* Ajuste do espaçamento interno */
+  }
+
+  .file-item {
+    font-size: 16px; /* Tamanho do texto ajustado */
+    padding: 10px; /* Ajuste do espaçamento interno */
+  }
+}
+/* Telas grandes (acima de 1024px) */
+@media (min-width: 1025px) {
+  .timeline h1 {
+    font-size: 57px; /* Tamanho do título ajustado para telas grandes */
+  }
+
+  .filters div {
+    font-size: 18px; /* Tamanho maior para os filtros */
+    padding: 8px 15px; /* Ajuste do espaçamento interno */
+  }
+
+  .file-item {
+    font-size: 18px; /* Tamanho do texto maior */
+  }
+}

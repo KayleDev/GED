@@ -1,0 +1,30 @@
+#property-div {
+    max-width: 99%;
+  }
+  
+  #activateAddProperty {
+    width: 100%;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    background-color:cornflowerblue ;
+  }
+  
+  #property-form {
+    display: none;
+  }
+  
+  .property {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    margin-top: 10px;
+  }
+  .property img {
+    width: 25px;
+    height: 25px;
+    margin-right: 10px;
+  }
+  .property p {
+    margin-right: 10px;
+  }

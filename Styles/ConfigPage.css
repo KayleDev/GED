@@ -1,0 +1,123 @@
+:root {
+  --body-color: #e2e2e2; /* Cores usadas no modo de cor normal */
+  --primary-color: #252525;
+
+  --dark-body-color: #282c2d; /* Cores usadas no modo de cor escuro */
+  --primary-text-color: #e8e6e3;
+
+  /* Cores usadas para auxiliar na combinação de outras cores */
+  --secondary-black-color: #1a1c1d;  
+
+  --secondary-white-color: #f7f7f7; 
+  --secondary-dark-color: #1d1f20;
+}
+
+/* Estilos gerais para o body, com cor de fundo e fonte padrão */
+body {
+  color: var(--primary-color);
+  background-color: var(--body-color); /* Cor de fundo do corpo definida por variável CSS */
+  font-family: 'Arial', sans-serif; /* Fonte do corpo definida como Arial */
+}
+
+/* Container para as configurações, centralizando o conteúdo e aplicando padding */
+.settings-container {
+  max-width: 900px; /* Largura máxima do container */
+  margin: 50px auto; /* Centraliza horizontalmente e adiciona margem superior de 50px */
+  padding: 20px; /* Espaçamento interno de 20px */
+  margin-top: 0%; /* Ajuste na margem superior */
+  padding-top: 0%; /* Ajuste no padding superior */
+}
+
+/* Título das configurações, centralizado e estilizado */
+.settings-title {
+  text-align: center; /* Centraliza o título */
+  margin-bottom: 30px; /* Espaço abaixo do título */
+  font-weight: bold; /* Deixa o texto em negrito */
+  font-size: 50px; /* Tamanho grande da fonte */
+  border-bottom: 0px; /* Remove a borda inferior */
+  color: var(--primary-color); /* Cor do título definida pela variável CSS */
+  font-family: horizon; /* Fonte personalizada para o título */
+}
+
+/* Estilo para as seções dentro do container de configurações */
+.settings-section {
+  margin-bottom: 30px; /* Espaço abaixo de cada seção */
+  padding: 15px; /* Espaçamento interno das seções */
+  border: 1px solid var(--secondary-white-color); /* Borda branca ao redor de cada seção */
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.5); /* Sombra suave para dar destaque */
+  border-radius: 10px; /* Bordas arredondadas */
+  transition: transform 0.3s, box-shadow 0.3s; /* Efeito de transição suave ao interagir com a seção */
+}
+
+/* Título dentro das seções, com estilo customizado */
+.settings-section h4 {
+  margin-bottom: 15px; /* Espaço abaixo do título da seção */
+  font-size: 29px; /* Tamanho de fonte maior para o título */
+  border-bottom: 0px; /* Remove a borda inferior */
+  color: var(--primary-color); /* Cor do título definida pela variável CSS */
+  font-family: horizon; /* Fonte personalizada para os subtítulos */
+}
+
+/* Estilos para os campos de seleção (select) */
+.form-select {
+  border: 1px solid rgb(167, 167, 167); /* Borda cinza clara */
+  color: var(--primary-color); /* Cor do texto do campo de seleção */
+  background-color: #09090F; /* Fundo escuro do campo */
+}
+
+/* Efeito ao focar no campo de seleção (select), adicionando uma borda brilhante */
+.form-select:focus {
+  box-shadow: 0 0 5px var(--secondary-white-colorfff); /* Adiciona um brilho ao redor do campo */
+}
+
+/* Estilos para o botão principal */
+.btn-primary {
+  background-color: var(--secondary-white-color); /* Cor de fundo do botão */
+  color: var(--secondary-dark-color);
+  border: 0px; /* Remove borda padrão */
+  border-radius: 10px; /* Bordas arredondadas */
+  font-size: 19px; /* Tamanho da fonte */
+}
+
+/* Efeito ao passar o mouse sobre o botão principal (hover), mudando as cores */
+.btn-primary:hover {
+  color: var(--primary-color); /* Muda a cor do texto */
+  background-color: var(--body-color); /* Muda a cor de fundo */
+  border: 1px solid #ffffff;
+}
+
+/* Estilos para o segundo tipo de botão (btn-primary1) */
+.btn-primary1 {
+  color: var(--primary-text-color); /* Cor do texto definida pela variável CSS */
+  background-color: #000000; /* Cor de fundo roxa */
+  border: 0px; /* Remove borda padrão */
+  border-radius: 10px; /* Bordas arredondadas */
+  font-size: 19px; /* Tamanho da fonte */
+}
+
+/* Efeito de hover no botão secundário, mudando a cor de fundo */
+.btn-primary1:hover {
+  color: var(--primary-text-color); /* Cor do texto não muda */
+  background-color: #000000; /* Muda a cor de fundo para uma tonalidade mais escura */
+}
+
+/* Estilo para os rótulos dos campos do formulário */
+.form-label {
+  font-size: 19px; /* Tamanho do texto do rótulo */
+  color: var(--primary-color);
+}
+
+/* Estilos para os campos de entrada (input) */
+.form-control {
+  background-color: var(--secondary-white-color); /* Cor de fundo escura definida pela variável CSS */
+}
+
+/* Efeito para quando o campo de entrada está em foco (quando o usuário clica nele) */
+.form-control:focus {
+  background-color: var(--primary-text-color); /* Mantém a cor de fundo enquanto o campo está em foco */
+}
+
+/* Estilo para o input de checkboxes quando marcado */
+.form-check-input:checked {
+  background-color: #000000; /* Cor de fundo azul escuro quando o checkbox está marcado */
+}

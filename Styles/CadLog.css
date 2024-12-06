@@ -1,0 +1,167 @@
+/* Container principal que ocupa toda a tela (100% largura e altura) e usa flexbox */
+.container {
+  width: 100vw; /* Largura total da tela */
+  height: 100vh; /* Altura total da tela */
+  display: flex; /* Flexbox para alinhamento dos itens internos */
+}
+
+/* Estilos gerais para o body e html, garantindo que o conteúdo centralize */
+body, html {
+  height: 100%; /* Altura total da tela */
+  display: flex; /* Flexbox para centralizar os elementos */
+  justify-content: center; /* Alinha os itens horizontalmente no centro */
+  align-items: center; /* Alinha os itens verticalmente no centro */
+}
+
+/* Estilo para o link de "não tem conta", utilizando a cor primária e outras propriedades */
+.no-account {
+  color: #e8e6e3; /* Cor do texto definida pela variável CSS */
+  font-size: 12px; /* Tamanho da fonte */
+  text-decoration: none; /* Remove a decoração de sublinhado */
+  font-weight: bold; /* Deixa o texto em negrito */
+  letter-spacing: 1px; /* Espaçamento entre as letras */
+}
+
+/* Estilo para o link quando o mouse passa por cima, adicionando sublinhado */
+.no-account:hover {
+  text-decoration: underline; /* Sublinha o texto quando o cursor está sobre o link */
+}
+
+/* Seções de login, cadastro e continuidade, com largura de 50% da tela */
+.login-section, .continue-section, .register-section {
+  width: 50%; /* Define a largura das seções como 50% da tela */
+  display: flex; /* Flexbox para alinhar os itens internamente */
+  flex-direction: column; /* Alinha os itens verticalmente */
+  justify-content: center; /* Centraliza os itens verticalmente */
+  padding: 0 80px; /* Espaçamento interno nas laterais (80px) */
+}
+
+/* Estilo adicional para a seção de login e registro, com fundo branco */
+.login-section, .register-section {
+  background-color: var(--primary-bg-color); /* Cor de fundo da seção */
+  align-items: flex-start; /* Alinha os itens à esquerda */
+}
+
+/* Estilo para os botões dentro das seções, distribuindo-os de forma espaçada */
+.buttons {
+  display: flex; /* Flexbox para alinhar os botões horizontalmente */
+  justify-content: space-between; /* Espaço entre os botões */
+  width: 100%; /* Largura total */
+  margin-top: 30px; /* Espaço acima dos botões */
+}
+
+/* Título das seções de login e registro, com fontes grandes e em negrito */
+.register-section h1, .login-section h1 {
+  font-size: 36px; /* Tamanho da fonte */
+  font-weight: bold; /* Negrito */
+  color: var(--primary-color); /* Cor do texto */
+  margin-bottom: 40px; /* Espaço abaixo do título */
+}
+
+/* Estilo para o formulário nas seções de login e registro */
+.register-section form, .login-section form {
+  width: 100%; /* Largura total do formulário */
+  display: flex; /* Flexbox para alinhamento dos itens no formulário */
+  flex-direction: column; /* Alinha os itens verticalmente */
+}
+
+/* Estilo para os botões principais, como "entrar", "registrar" e "voltar" */
+.back-button, .enter-button, .register-button {
+  width: 48%; /* Largura de 48% para cada botão */
+  padding: 12px; /* Espaço interno do botão */
+  font-size: 16px; /* Tamanho da fonte */
+  border: none; /* Remove a borda padrão */
+  cursor: pointer; /* Mostra o cursor de mão ao passar por cima */
+  border-radius: 20px; /* Bordas arredondadas */
+  text-align: center; /* Alinha o texto ao centro */
+  font-weight: bold; /* Deixa o texto em negrito */
+  text-decoration: none; /* Remove a decoração de sublinhado */
+}
+
+/* Estilo para os campos de entrada (input), com borda inferior e alinhamento */
+.input-Accounts {
+  width: 100%; /* Largura total do campo de entrada */
+  padding: 10px; /* Espaçamento interno do campo */
+  margin-bottom: 20px; /* Espaço abaixo do campo */
+  border: none; /* Remove a borda padrão */
+  border-bottom: 1px solid var(--primary-color); /* Borda inferior */
+  color: var(--primary-color);
+  background: transparent; /* Fundo transparente */
+  text-align: left; /* Alinha o texto à esquerda */
+}
+
+.input-Accounts::placeholder {
+  color: var(--primary-color);
+}
+
+/* Estilos para os botões "entrar" e "registrar", com cores definidas */
+.enter-button, .register-button, .back-button {
+  background-color: var(--secondary-black-color); /* Cor de fundo do botão */
+  color: #e8e6e3; /* A cor do texto do botão não muda então não altera essa bomba */
+}
+
+/* Estilos para a seção de "continuar", com fundo escuro e texto claro */
+.continue-section {
+  background-color: var(--secondary-black-color); /* Cor de fundo escuro */
+  color: var(--primary-text-color); /* Cor do texto */
+  text-align: center; /* Alinha o texto ao centro */
+}
+
+/* Estilo para o título da seção "continuar", com fontes grandes e espaçamento */
+.continue-section h2 {
+  font-size: 24px; /* Tamanho da fonte */
+  font-weight: bold; /* Negrito */
+  letter-spacing: 2px; /* Espaçamento entre as letras */
+  margin-bottom: 50px; /* Espaço abaixo do título */
+  color: #e8e6e3; /* Cor do texto */
+  font-family: horizon; /* Fonte personalizada */
+}
+
+/* Estilos para o rótulo dos campos de entrada na seção de registro */
+.register-section label {
+  font-size: 16px; /* Tamanho da fonte */
+  color: var(--secondary-black-color); /* Cor do texto */
+  margin: 10px 0 5px; /* Margens do rótulo */
+}
+
+#terms-Link {
+  color: var(--primary-color);
+  text-decoration: none;
+}
+
+/* Media query para telas menores que 768px (tablet e telas médias) */
+@media (max-width: 768px) {
+  .container {
+    flex-direction: column; /* Alinha os elementos verticalmente em telas pequenas */
+  }
+
+  /* Seções ocupam 100% da largura e 50% da altura */
+  .continue-section, .register-section, .login-section {
+    width: 100%; /* Largura total */
+    height: 50vh; /* 50% da altura da tela */
+  }
+}
+
+/* Media query para telas menores que 480px (celulares) */
+@media (max-width: 480px) {
+  /* Reduz o tamanho da fonte dos títulos */
+  .login-section h1, .register-button h1 {
+    font-size: 24px; /* Tamanho menor para os títulos */
+  }
+
+  /* Reduz o tamanho do título da seção "continuar" */
+  .continue-section h2 {
+    font-size: 18px; /* Tamanho menor */
+  }
+
+  /* Ajusta o tamanho dos botões para telas menores */
+  .back-button, .register-button, .enter-button {
+    font-size: 14px; /* Fonte menor */
+    padding: 8px; /* Menos padding */
+  }
+
+  /* Ajusta o tamanho da fonte do link de "não tem conta" */
+  .no-account {
+    font-size: 10px; /* Fonte bem pequena */
+  }
+}

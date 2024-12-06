@@ -1,0 +1,13 @@
+#document-popup {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    justify-content: space-between;
+    position: fixed;
+    width: 50%;
+    height: 90vh;
+    z-index: 9;
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 0 100px black;
+    padding: 10px;
+  }

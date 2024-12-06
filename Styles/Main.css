@@ -1,0 +1,49 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;700&display=swap');
+
+:root {
+    --body-color: #e2e2e2; /* Cores usadas no modo de cor normal */
+    --primary-color: #252525;
+
+    --dark-body-color: #282c2d; /* Cores usadas no modo de cor escuro */
+    --primary-text-color: #e8e6e3;
+
+    /* Cores usadas para auxiliar na combinação de outras cores */
+    --secondary-black-color: #1a1c1d;  
+
+    --secondary-white-color: #f7f7f7; 
+    --secondary-dark-color: #1d1f20;
+}
+
+@font-face {
+    font-family: horizon;
+    src: url('../Assets/fonts/Horizon.otf') format('truetype');
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0; 
+    padding: 0;
+    font-family: 'Open Sans', sans-serif;
+    transition: background-color 1s ease, color 1s ease;
+}
+
+.text-settings {
+    color: var(--primary-color);
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: var(--body-color); 
+    margin: 0;
+}
+
+.white-link {
+    text-decoration: none;
+    color: var(--primary-text-color);
+    display: block;
+    width: 100%;
+    height: 100%;
+}

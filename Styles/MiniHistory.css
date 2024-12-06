@@ -1,0 +1,63 @@
+.file-item-header {
+    font-weight: bold;
+    background-color: transparent;
+    color: var(--primary-color);
+    display: flex;
+    justify-content: space-between;
+    padding: 10px;
+}
+
+.file-item-header:hover {
+    background-color: transparent !important;
+}
+
+.file-item {
+    display: flex;
+    justify-content: space-between;
+    background-color: transparent;
+    color: var(--secondary-dark-color);
+    padding: 10px;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+.file-item:hover {
+    background-color: transparent;
+}
+
+.files-list {
+    display: flex;
+    flex-direction: column;
+    text-overflow: ellipsis;
+    gap: 10px;
+    margin-top: 10px;
+}
+
+.file-item div {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    max-width: 200px;
+    display: inline-block;
+    text-align: center;
+}
+
+.file-item-header div,
+.file-item div {
+    flex: 1;
+}
+
+@media (max-width: 768px) {
+    .file-item {
+        flex-direction: column;
+        text-align: left;
+    }
+
+    .file-item-header {
+        flex-direction: column;
+    }
+
+    .file-item-header div, .file-item div {
+        max-width: none;
+    }
+}
